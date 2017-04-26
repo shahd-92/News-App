@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="vertical"
+
+    android:paddingEnd="@dimen/marginLeft"
+    android:paddingLeft="@dimen/marginLeft"
+    android:paddingRight="@dimen/marginLeft"
+    android:paddingStart="@dimen/marginLeft"
+    android:paddingBottom="@dimen/item_padding"
+    android:paddingTop="@dimen/item_padding">
+
+    >
+
+
+
+        <TextView
+            android:id="@+id/web_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="title"
+            android:textAllCaps="true"
+            android:textSize="@dimen/title" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:layout_marginStart="@dimen/marginLeft"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/publication_date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="date"
+            android:textSize="@dimen/details" />
+        <TextView
+            android:id="@+id/section_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="section_name"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/trail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="trailText"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:layout_marginStart="@dimen/marginLeft"
+            android:textSize="12sp" />
+</LinearLayout>
