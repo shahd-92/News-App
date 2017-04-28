@@ -36,6 +36,6 @@ public class News {
     }
 
     public String getwebUrl() {
-        return webPublicationDate;
+        return webUrl;
     }
 }

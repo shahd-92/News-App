@@ -35,18 +35,18 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView earthquakeListView = (ListView) findViewById(R.id.list);
+        ListView newsListView = (ListView) findViewById(R.id.list);
 
         mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
-        earthquakeListView.setEmptyView(mEmptyStateTextView);
+        newsListView.setEmptyView(mEmptyStateTextView);
         // Create a new {@link ArrayAdapter} of newsws
         adapter = new NewsAdapter(this, new ArrayList<News>());
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
-        earthquakeListView.setAdapter(adapter);
+        newsListView.setAdapter(adapter);
 
-        earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 News current = adapter.getItem(position);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         // Set empty state text to display "No news found."
         mEmptyStateTextView.setText(R.string.no_newss);
 
-        // Clear the adapter of previous earthquake data
+        // Clear the adapter of previous news data
         adapter.clear();
 
         // If there is a valid list of {@link news}s, then add them to the adapter's

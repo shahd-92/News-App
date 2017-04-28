@@ -17,7 +17,6 @@ import java.util.List;
 
 public class NewsAdapter extends ArrayAdapter<News> {
 
-    private static final String LOCATION_SEPARATOR = " of ";
 
     public NewsAdapter(@NonNull Context context, @NonNull List<News> newses) {
         super(context, 0, newses);

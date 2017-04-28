@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_margin="@dimen/margin"
     android:orientation="vertical"
-
     android:paddingBottom="@dimen/item_padding"
     android:paddingEnd="@dimen/marginLeft"
     android:paddingLeft="@dimen/marginLeft"

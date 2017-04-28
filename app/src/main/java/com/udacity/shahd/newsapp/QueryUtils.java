@@ -17,7 +17,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 /**
- * Helper methods related to requesting and receiving earthquake data from USGS.
+ * Helper methods related to requesting and receiving news data from USGS.
  */
 public final class QueryUtils {
     /**
@@ -36,7 +36,7 @@ public final class QueryUtils {
     }
 
     /**
-     * Query the USGS dataset and return an {@link News} object to represent a single earthquake.
+     * Query the USGS dataset and return an {@link News} object to represent a single news.
      */
     public static ArrayList<News> fetchNewsData(String requestUrl) {
         try {
@@ -110,7 +110,7 @@ public final class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the news JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -164,14 +164,14 @@ public final class QueryUtils {
                 String webTitle = news.optString("webTitle");
                 JSONObject fields=news.optJSONObject("fields");
                 String trailText = fields.optString("trailText");
-                String webUrl = fields.optString("webUrl");
+                String webUrl = news.optString("webUrl");
                 newses.add(new News(webTitle, trailText, sectionName, webPublicationDate, webUrl));
             }
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
             // with the message from the exception.
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing the news JSON results", e);
         }
 // Return the list of news
         return newses;
