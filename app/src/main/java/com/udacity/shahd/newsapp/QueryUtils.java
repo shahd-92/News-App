@@ -145,7 +145,7 @@ public final class QueryUtils {
      * parsing a JSON response.
      */
     public static ArrayList<News> extractNews(String newsJSON) {
-        // Create an empty ArrayList that we can start adding earthquakes to
+        // Create an empty ArrayList that we can start adding news to
         ArrayList<News> newses = new ArrayList<>();
         // Try to parse the SAMPLE_JSON_RESPONSE. If there's a problem with the way the JSON
         // is formatted, a JSONException exception object will be thrown.
@@ -164,7 +164,8 @@ public final class QueryUtils {
                 String webTitle = news.optString("webTitle");
                 JSONObject fields=news.optJSONObject("fields");
                 String trailText = fields.optString("trailText");
-                newses.add(new News(webTitle, trailText, sectionName,webPublicationDate));
+                String webUrl = fields.optString("webUrl");
+                newses.add(new News(webTitle, trailText, sectionName, webPublicationDate, webUrl));
             }
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
@@ -172,7 +173,7 @@ public final class QueryUtils {
             // with the message from the exception.
             Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
         }
-// Return the list of earthquakes
+// Return the list of news
         return newses;
     }
 }
